@@ -91,4 +91,19 @@
 	<target id="haxe" tool="linker" if="linux">
 		<lib name="/usr/lib64/libX11.so" if="HXCPP_M64" />
 	</target>
+
+	<!-- _________________________________ Mobile stuff _______________________________ -->
+
+	<section if="android">
+		<!-- Do whatever you want I'm tired uninstall and install everytime -->
+		<certificate path="key.keystore" password="nullfunni" alias="null" alias-password="nullfunni" unless="debug" />
+
+		<!--Target SDK-->
+		<!--<android target-sdk-version="29" if="EXTERNAL || MEDIA"/>-->
+	</section>
+
+	<section if="ios">
+		<define name='objc' />
+		<ios linker-flags='-ObjC' />
+	</section>
 </project>
